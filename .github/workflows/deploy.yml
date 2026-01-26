@@ -30,14 +30,15 @@ jobs:
           cache-dependency-path: movik/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd movik
-          npm ci
+        working-directory: movik
+        run: npm ci
+        
       - name: Build application
-        run: |
-          cd movik
-          npm run build
-          touch dist/.nojekyll
+        working-directory: movik
+        run: npm run build
+        
+      - name: Create .nojekyll file
+        run: touch movik/dist/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
