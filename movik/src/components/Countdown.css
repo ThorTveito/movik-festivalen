@@ -1,0 +1,43 @@
+.countdown {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.countdown h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-timer {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-value {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.time-label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  font-weight: 500;
+}

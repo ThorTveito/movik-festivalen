@@ -1,0 +1,25 @@
+.banner {
+  width: 100%;
+  background-color:#fff;
+  color: #162f4d;
+  padding: 1rem 0;
+  border-bottom: 2px solid #162f4d;
+  overflow: hidden;
+}
+
+.banner-text {
+  margin: 0;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.banner-icon {
+  height: 3rem;
+  width: auto;
+  margin: 0rem;
+  vertical-align: middle;
+}
