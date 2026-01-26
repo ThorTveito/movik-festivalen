@@ -12,7 +12,7 @@ This repository uses GitHub Actions to deploy the React application to GitHub Pa
 2. Navigate to "Pages" in the left sidebar
 3. Under "Build and deployment":
    - **Source**: Select "GitHub Actions"
-   - ~~NOT "Deploy from a branch"~~ (this will show only the README)
+   - **NOT** "Deploy from a branch" (this will show only the README)
 
 ## How It Works
 
