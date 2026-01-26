@@ -39,6 +39,20 @@ jobs:
         
       - name: Create .nojekyll file
         run: touch movik/dist/.nojekyll
+        
+      - name: Verify build output
+        run: |
+          echo "Checking build output..."
+          ls -la movik/dist/
+          if [ ! -f "movik/dist/index.html" ]; then
+            echo "Error: index.html not found!"
+            exit 1
+          fi
+          if [ ! -f "movik/dist/.nojekyll" ]; then
+            echo "Error: .nojekyll not found!"
+            exit 1
+          fi
+          echo "Build output verified successfully!"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
