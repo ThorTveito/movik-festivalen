@@ -24,6 +24,24 @@
   display: block;
 }
 
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .app-container {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  }
+
+  .hero-image {
+    object-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 0;
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
