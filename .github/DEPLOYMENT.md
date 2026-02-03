@@ -16,14 +16,34 @@ This repository uses GitHub Actions to deploy the React application to GitHub Pa
 
 ## How It Works
 
-The deployment workflow (`.github/workflows/deploy.yml`) automatically:
+The deployment workflow (`.github/workflows/deploy.yml`) automatically runs on **every push to the main branch** and:
 
 1. Checks out the repository
-2. Installs Node.js dependencies
-3. Builds the React application
-4. Creates a `.nojekyll` file (to prevent Jekyll processing)
-5. Uploads the build artifact
-6. Deploys to GitHub Pages
+2. Logs deployment information (branch, commit, trigger)
+3. Installs Node.js dependencies
+4. Builds the React application
+5. Creates a `.nojekyll` file (to prevent Jekyll processing)
+6. Verifies the build output
+7. Uploads the build artifact
+8. Deploys to GitHub Pages
+9. Outputs the deployment URL
+
+### Verifying the Workflow Runs
+
+After pushing to `main`, you can verify the workflow ran by:
+
+1. Going to the **Actions** tab in your repository
+2. Looking for "Deploy to GitHub Pages" workflow runs
+3. The most recent run should show your commit
+4. Click on it to see detailed logs
+
+The workflow logs will show:
+- 🚀 Which branch triggered the deployment
+- 📝 The commit SHA
+- 👤 Who triggered it
+- 🔔 The event type (push or workflow_dispatch)
+- ✅ Deployment success confirmation
+- 🌐 The deployed site URL
 
 ## Workflow Configuration
 

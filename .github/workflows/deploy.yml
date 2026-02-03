@@ -21,6 +21,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - name: Print deployment info
+        run: |
+          echo "🚀 Starting deployment from branch: ${{ github.ref_name }}"
+          echo "📝 Commit SHA: ${{ github.sha }}"
+          echo "👤 Triggered by: ${{ github.actor }}"
+          echo "🔔 Event: ${{ github.event_name }}"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -58,6 +65,12 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           enablement: true
+      
+      - name: Verify Pages configuration
+        run: |
+          echo "📄 Verifying GitHub Pages is configured correctly..."
+          echo "If deployment fails, ensure GitHub Pages is enabled in repository settings."
+          echo "Settings → Pages → Source should be set to 'GitHub Actions'"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -74,3 +87,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      
+      - name: Output deployment URL
+        run: |
+          echo "✅ Deployment successful!"
+          echo "🌐 Site URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "📦 Deployment completed at: $(date)"
