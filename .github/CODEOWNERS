@@ -1,0 +1,12 @@
+# CODEOWNERS file for movik-festivalen repository
+# This file defines individuals or teams that are responsible for code in this repository.
+# More info: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo
+# Trym Tveito is designated as the admin collaborator
+* @TrymTveito
+
+# Specific paths can be added here if needed
+# For example:
+# /movik/src/ @TrymTveito
+# /.github/ @TrymTveito
