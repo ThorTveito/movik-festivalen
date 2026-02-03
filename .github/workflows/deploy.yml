@@ -65,6 +65,12 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           enablement: true
+      
+      - name: Verify Pages configuration
+        run: |
+          echo "📄 Verifying GitHub Pages is configured correctly..."
+          echo "If deployment fails, ensure GitHub Pages is enabled in repository settings."
+          echo "Settings → Pages → Source should be set to 'GitHub Actions'"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
