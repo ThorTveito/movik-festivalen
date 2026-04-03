@@ -48,8 +48,9 @@ The workflow logs will show:
 ## Workflow Configuration
 
 The workflow includes:
-- **Base Path**: `/movik-festivalen/` (configured in `movik/vite.config.ts`)
+- **Base Path**: `/` (configured in `movik/vite.config.ts`)
 - **Build Output**: `movik/dist/`
+- **Extra path entrypoint**: `/rebus/` is created by copying `index.html` to `movik/dist/rebus/index.html`
 - **Auto-enablement**: `enablement: true` parameter attempts to enable Pages automatically
 
 ## Troubleshooting
@@ -88,4 +89,7 @@ To trigger a deployment manually:
 ## Site URL
 
 The deployed site will be available at:
-**https://thortveito.github.io/movik-festivalen/**
+**https://movik.tveit.to/**
+
+Additional path supported:
+**https://movik.tveit.to/rebus**
