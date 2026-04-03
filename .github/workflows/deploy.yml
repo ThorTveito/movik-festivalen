@@ -46,8 +46,10 @@ jobs:
 
       - name: Add /rebus path entrypoint
         run: |
-          mkdir -p movik/dist/rebus
-          cp movik/dist/index.html movik/dist/rebus/index.html
+          if [ ! -f "movik/dist/rebus/index.html" ]; then
+            mkdir -p movik/dist/rebus
+            cp movik/dist/index.html movik/dist/rebus/index.html
+          fi
         
       - name: Create .nojekyll file
         run: touch movik/dist/.nojekyll
