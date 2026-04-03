@@ -43,6 +43,11 @@ jobs:
       - name: Build application
         working-directory: movik
         run: npm run build
+
+      - name: Add /rebus path entrypoint
+        run: |
+          mkdir -p movik/dist/rebus
+          cp movik/dist/index.html movik/dist/rebus/index.html
         
       - name: Create .nojekyll file
         run: touch movik/dist/.nojekyll
@@ -53,6 +58,10 @@ jobs:
           ls -la movik/dist/
           if [ ! -f "movik/dist/index.html" ]; then
             echo "Error: index.html not found!"
+            exit 1
+          fi
+          if [ ! -f "movik/dist/rebus/index.html" ]; then
+            echo "Error: rebus/index.html not found!"
             exit 1
           fi
           if [ ! -f "movik/dist/.nojekyll" ]; then
