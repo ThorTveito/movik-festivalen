@@ -2,20 +2,12 @@
   <header class="app-header">
     <RouterLink to="/" class="header-logo">MovikFestivalen</RouterLink>
     <nav class="header-nav">
-      <RouterLink to="/info">Info</RouterLink>
       <RouterLink to="/musikk-ko">Musikk kø</RouterLink>
-      <template v-if="currentUser">
-        <button class="signout-btn" @click="signOut">Logg ut</button>
-      </template>
-      <RouterLink v-else to="/logg-inn">Logg inn</RouterLink>
     </nav>
   </header>
 </template>
 
 <script setup lang="ts">
-import { useAuth } from '@/composables/useAuth'
-
-const { currentUser, signOut } = useAuth()
 </script>
 
 <style scoped>

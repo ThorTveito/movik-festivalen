@@ -8,9 +8,7 @@
 
     <nav class="menu-dropdown" :class="{ open: isOpen }">
       <ul>
-        <li><RouterLink to="/info" @click="close">Info</RouterLink></li>
         <li><RouterLink to="/musikk-ko" @click="close">Musikk kø</RouterLink></li>
-        <li><RouterLink to="/logg-inn" @click="close">Logg inn</RouterLink></li>
       </ul>
     </nav>
   </div>

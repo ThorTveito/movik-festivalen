@@ -5,8 +5,6 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     { path: '/', component: HomeView },
-    { path: '/info', component: () => import('@/views/InfoView.vue') },
-    { path: '/logg-inn', component: () => import('@/views/LoginView.vue') },
     { path: '/musikk-ko', component: () => import('@/views/MusicQueueView.vue') },
   ],
 })
