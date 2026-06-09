@@ -2,23 +2,7 @@
   <div class="queue-page">
     <AppHeader />
 
-    <!-- Not authenticated -->
-    <div v-if="!isAuthenticated" class="login-screen">
-      <div class="login-card">
-        <img src="@/assets/ElefantSVG.svg" class="login-elephant" alt="" />
-        <h1>Musikk kø</h1>
-        <p>Stem på neste sang på MovikFestivalen</p>
-        <button class="spotify-btn" @click="login">
-          <svg viewBox="0 0 24 24" class="spotify-icon" fill="currentColor">
-            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-          </svg>
-          Koble til Spotify
-        </button>
-      </div>
-    </div>
-
-    <!-- Authenticated -->
-    <div v-else class="app-layout" :class="{ 'queue-open': queueVisible }">
+    <div class="app-layout" :class="{ 'queue-open': queueVisible }">
 
       <!-- Queue panel -->
       <transition name="slide-right">
@@ -95,7 +79,7 @@
 
     <!-- Player bar -->
     <transition name="slide-up">
-      <div v-if="isAuthenticated && playback?.item" class="player-bar">
+      <div v-if="playback?.item" class="player-bar">
         <img :src="albumArt(playback.item, 96)" class="player-art" :alt="playback.item.album.name" />
         <div class="player-center">
           <div class="player-meta">
@@ -131,7 +115,7 @@ import AppHeader from '@/components/AppHeader.vue'
 import { useSpotify } from '@/composables/useSpotify'
 import type { SpotifyTrack, PlaybackState } from '@/composables/useSpotify'
 
-const { isAuthenticated, login, search, addToQueue, getCurrentTrack, getQueue } = useSpotify()
+const { search, addToQueue, getCurrentTrack, getQueue } = useSpotify()
 
 // Search state
 const query = ref('')
@@ -252,16 +236,13 @@ function toggleQueue() {
 }
 
 watch(queueVisible, async (open) => {
+  document.body.style.overflow = open ? 'hidden' : ''
   if (open) {
     await fetchQueue()
     queueTimer = setInterval(fetchQueue, 120_000)
   } else {
     if (queueTimer) { clearInterval(queueTimer); queueTimer = null }
   }
-})
-
-watch(isAuthenticated, (authed) => {
-  if (authed) startPolling()
 })
 
 function startPolling() {
@@ -272,10 +253,11 @@ function startPolling() {
 
 onMounted(() => {
   document.addEventListener('click', onClickOutside)
-  if (isAuthenticated.value) startPolling()
+  startPolling()
 })
 
 onUnmounted(() => {
+  document.body.style.overflow = ''
   document.removeEventListener('click', onClickOutside)
   if (playerTimer) clearInterval(playerTimer)
   if (progressTimer) clearInterval(progressTimer)
@@ -286,7 +268,8 @@ onUnmounted(() => {
 <style scoped>
 /* ── Page & background ── */
 .queue-page {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   background-color: rgb(245, 185, 48);
@@ -370,6 +353,8 @@ onUnmounted(() => {
   display: flex;
   position: relative;
   padding-bottom: 88px; /* player bar height */
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* ── Queue panel ── */
@@ -596,6 +581,7 @@ onUnmounted(() => {
 .add-btn {
   width: 34px;
   height: 34px;
+  padding: 0;
   border-radius: 50%;
   border: 1.5px solid rgba(255,255,255,0.2);
   background: none;

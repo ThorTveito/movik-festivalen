@@ -59,7 +59,7 @@ async function handleSubmit() {
   display: flex;
   flex-direction: column;
   background-color: #f7f5f0;
-  color: #162f4d;
+  color: #b65c95;
 }
 
 .content {
@@ -72,7 +72,7 @@ async function handleSubmit() {
 
 .login-card {
   background: #fff;
-  border: 2px solid #162f4d;
+  border: 2px solid #b65c95;
   border-radius: 6px;
   padding: 2.5rem 2rem;
   width: 100%;
@@ -115,24 +115,24 @@ async function handleSubmit() {
 }
 
 .field input {
-  border: 1.5px solid rgba(22, 47, 77, 0.3);
+  border: 1.5px solid rgba(182, 92, 149, 0.3);
   border-radius: 4px;
   padding: 0.65rem 0.75rem;
   font-size: 1rem;
   font-family: inherit;
-  color: #162f4d;
+  color: #b65c95;
   background: #fff;
   outline: none;
   transition: border-color 0.15s;
 }
 
 .field input:focus {
-  border-color: #162f4d;
+  border-color: #b65c95;
 }
 
 .submit-btn {
   margin-top: 0.5rem;
-  background-color: #162f4d;
+  background-color: #b65c95;
   color: #fff;
   border: none;
   border-radius: 4px;

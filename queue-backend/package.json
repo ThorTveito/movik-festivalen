@@ -1,0 +1,10 @@
+{
+  "name": "queue-backend",
+  "private": true,
+  "scripts": {
+    "start": "bun run server.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8"
+  }
+}

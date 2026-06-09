@@ -40,7 +40,7 @@ function close() {
   gap: 5px;
   width: 44px;
   height: 44px;
-  background-color: #162f4d;
+  background-color: #b65c95;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -70,7 +70,7 @@ function close() {
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
-  background-color: #162f4d;
+  background-color: #b65c95;
   min-width: 180px;
   border-radius: 4px;
   overflow: hidden;

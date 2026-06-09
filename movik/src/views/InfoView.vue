@@ -88,7 +88,7 @@ async function save(key: string) {
   display: flex;
   flex-direction: column;
   background-color: #f7f5f0;
-  color: #162f4d;
+  color: #b65c95;
 }
 
 .content {
@@ -101,7 +101,7 @@ async function save(key: string) {
 
 .hero-block {
   margin-bottom: 3rem;
-  border-bottom: 2px solid #162f4d;
+  border-bottom: 2px solid #b65c95;
   padding-bottom: 2rem;
 }
 
@@ -170,11 +170,11 @@ async function save(key: string) {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border: 1.5px solid rgba(22, 47, 77, 0.3);
+  border: 1.5px solid rgba(182, 92, 149, 0.3);
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
   font-family: inherit;
-  color: #162f4d;
+  color: #b65c95;
   background: #fff;
   box-sizing: border-box;
   margin-bottom: 0.75rem;
@@ -182,18 +182,18 @@ async function save(key: string) {
 }
 
 .edit-title:focus {
-  border-color: #162f4d;
+  border-color: #b65c95;
 }
 
 .edit-body {
   width: 100%;
   font-size: 1rem;
   line-height: 1.7;
-  border: 1.5px solid rgba(22, 47, 77, 0.3);
+  border: 1.5px solid rgba(182, 92, 149, 0.3);
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
   font-family: inherit;
-  color: #162f4d;
+  color: #b65c95;
   background: #fff;
   box-sizing: border-box;
   resize: vertical;
@@ -201,7 +201,7 @@ async function save(key: string) {
 }
 
 .edit-body:focus {
-  border-color: #162f4d;
+  border-color: #b65c95;
 }
 
 .edit-actions {
@@ -211,7 +211,7 @@ async function save(key: string) {
 }
 
 .save-btn {
-  background-color: #162f4d;
+  background-color: #b65c95;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -230,8 +230,8 @@ async function save(key: string) {
 
 .cancel-btn {
   background: none;
-  color: #162f4d;
-  border: 1.5px solid rgba(22, 47, 77, 0.3);
+  color: #b65c95;
+  border: 1.5px solid rgba(182, 92, 149, 0.3);
   border-radius: 4px;
   padding: 0.5rem 1.25rem;
   font-size: 0.85rem;
@@ -243,7 +243,7 @@ async function save(key: string) {
   transition: border-color 0.15s;
 }
 
-.cancel-btn:hover { border-color: #162f4d; }
+.cancel-btn:hover { border-color: #b65c95; }
 
 .load-error {
   color: #c0392b;
