@@ -774,7 +774,38 @@ onUnmounted(() => {
 
   .main-content {
     justify-content: flex-start;
-    padding-top: 3rem;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .results-list {
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+  }
+
+  .result-item {
+    padding: 0.45rem 0.75rem;
+    gap: 0.625rem;
+  }
+
+  .result-art {
+    width: 36px;
+    height: 36px;
+  }
+
+  .result-name {
+    font-size: 0.82rem;
+  }
+
+  .result-meta {
+    font-size: 0.7rem;
+  }
+
+  .add-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
   }
 }
 </style>
