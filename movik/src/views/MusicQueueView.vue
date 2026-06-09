@@ -785,27 +785,43 @@ onUnmounted(() => {
   }
 
   .result-item {
-    padding: 0.45rem 0.75rem;
+    padding: 0.5rem 0.75rem;
     gap: 0.625rem;
+    align-items: center;
   }
 
   .result-art {
     width: 36px;
     height: 36px;
+    flex-shrink: 0;
+  }
+
+  .result-info {
+    overflow: visible;
   }
 
   .result-name {
     font-size: 0.82rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.3;
   }
 
   .result-meta {
     font-size: 0.7rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.3;
   }
 
   .add-btn {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     font-size: 1rem;
+    flex-shrink: 0;
+    align-self: center;
   }
 }
 </style>
