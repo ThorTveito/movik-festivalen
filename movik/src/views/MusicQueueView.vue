@@ -8,7 +8,7 @@
       <transition name="slide-right">
         <aside v-if="queueVisible" class="queue-panel">
           <div class="queue-panel-header">
-            <h2>Neste opp</h2>
+            <h2>Queue</h2>
             <button class="icon-btn" @click="queueVisible = false">✕</button>
           </div>
           <div v-if="queueLoading" class="panel-state">Laster kø...</div>
@@ -378,7 +378,7 @@ onUnmounted(() => {
 }
 
 .queue-panel-header h2 {
-  color: #fff;
+  color: #b65c95;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
